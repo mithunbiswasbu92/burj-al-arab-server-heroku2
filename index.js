@@ -61,4 +61,8 @@ client.connect(err => {
     })
 }); 
 
-app.listen(port)
+app.get('/', (req, res) => {
+    res.send('Burj-al-arab server site done/working')
+})
+
+app.listen(process.env.PORT || port)
