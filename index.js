@@ -4,7 +4,7 @@ const cors = require('cors');
 const admin = require("firebase-admin");
 require('dotenv').config()
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.4svir.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
  
 const app = express()
@@ -65,4 +65,4 @@ app.get('/', (req, res) => {
     res.send('Burj-al-arab server site done/working')
 })
 
-app.listen(process.env.PORT || port)
+app.listen(port)
